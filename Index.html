@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Weather App - Vishal</title>
+    <link rel="stylesheet" href="weather.css">
+    <script src="https://kit.fontawesome.com/11e71d58fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="nav">
+        <div id="search-bar">
+            <input id="search" type="text" name="search" placeholder="Search for location" onkeyup="getWeatherdat()" onclick="getWeatherdat()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <button onclick="getweather ()"><i class="fa-solid fa-location-crosshairs"></i></button>
+        </div>
+        <div id="popular">
+            <div class="city1">
+                <i class="fa-solid fa-location-pin"> </i> 
+                <p>Malegaon : </p>
+                <p class="ptemp"><img src="http://openweathermap.org/img/wn/01d@4x.png" alt=""> 39°C</p>
+                <p class="sunrise1">Sunrise:<img src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" id="sun"> 6.03 am</p>
+                <p class="sunset1">Sunset:<img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/sunset-4242324-3520638.png" alt="" id="sun"> 18.37 pm</p>
+            </div>
+        </div>
+        <div id="logo">
+            <h1>Vishal's<span>Weather.site</span></h1>
+        </div>
+    </div>
+    <div id="geoLocation">
+        <i class="fa-solid fa-house"></i>
+        <p id="CityName">Malegaon , IN</p>
+    </div>
+    <div id="Info">
+        <div id="weatherInfo">
+            <div class="time">
+                <p>CURRENT WEATHER</p>
+                <div id="currentTime"><span id="am-pm"></span></div>    
+            </div>
+            <div class="weatherInfo">
+                <div class="currentTemp">
+                    <div class="temp">
+                        <img src="http://openweathermap.org/img/wn/01d@4x.png" alt="">
+                        <h1>39°C</h1>
+                    </div>
+                    <div class="currentWeather">
+                        <h3 class="today-weather">Clear</h3>
+                        <p class="feelsLike">FEELS LIKE 41°C</p>
+                    </div>
+                    <div class="DayExpect">
+                        <p>Expect Clear. The high will be 39.0°C.</p>
+                    </div>
+                </div>
+                <div class="todays-info">
+                    <div class="wind">
+                        <p>WIND</p>
+                        <p class="wind-speed">7.31km/h <i class="fa-solid fa-wind"></i></p>
+                    </div>
+                    <div class="humidity">
+                        <p>HUMIDITY</p>
+                        <p class="current-humidity"><i class="fa-solid fa-droplet"></i> 12%</p>
+                    </div>
+                    <div class="visibility">
+                        <p>VISIBILITY</p>
+                        <p class="current-visibility"><i class="fa-solid fa-cloud-fog"></i> 10 km</p> 
+                    </div>
+                    <div class="pressure">
+                        <p>PRESSURE</p>
+                        <p class="current-pressure">1005 mb</p> 
+                    </div>
+                    <div class="sunrise">
+                        <p>Sunrise</p>
+                        <p class="current-dew">6.03 AM</p> 
+                    </div>
+                    <div class="sunset">
+                    <p>Sunset</p>
+                    <p class="air-quality">06.37 PM</p>
+                </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="map">
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="100%" height="320px" id="gmap_canvas" src="https://maps.google.com/maps?q=&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 89%; margin: auto;box-sizing: border-box; padding: 8px; color: #fff; font-weight: 500;">
+        UPCOMING DAYS FORECAST
+    </div>
+    <div id="forcast">
+        <div id="todays-forecast">
+            <div class="today">
+                <p>Today</p>   
+            </div>
+            <div class="Todays-temp">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                <div>
+                    <p class="temp">36°C</p>
+                    <p class="temp">26°C</p>
+                </div>
+                <div class="todays-Weather">
+                    <p class="today-weather">Sunny </p>
+                    <p class="humidity"> <i class="fa-solid fa-droplet"></i> 11 %</p>
+                </div>
+            </div>
+        </div>
+        <div id="future-forecast">
+            <div>
+                <div class="day">
+                    <p>Mon 18</p>   
+                </div>
+                <div class="days-temp">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div>
+                        <p class="day-temp">36°C</p>
+                        <p class="day-temp">26°C</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="day">
+                    <p>Tue 19</p>   
+                </div>
+                <div class="days-temp">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div>
+                        <p class="day-temp">36°C</p>
+                        <p class="day-temp">26°C</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="day">
+                    <p>Wed 20</p>   
+                </div>
+                <div class="days-temp">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div>
+                        <p class="day-temp">36°C</p>
+                        <p class="day-temp">26°C</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="day">
+                    <p>Thus 21</p>   
+                </div>
+                <div class="days-temp">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div>
+                        <p class="day-temp">36°C</p>
+                        <p class="day-temp">26°C</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="day">
+                    <p>Fri 22</p>   
+                </div>
+                <div class="days-temp">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div>
+                        <p class="day-temp">36°C</p>
+                        <p class="day-temp">26°C</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="day">
+                    <p>Sat 23</p>   
+                </div>
+                <div class="days-temp">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div>
+                        <p class="day-temp">36°C</p>
+                        <p class="day-temp">26°C</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="day">
+                    <p>Sat 23</p>   
+                </div>
+                <div class="days-temp">
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="">
+                    <div>
+                        <p class="day-temp">36°C</p>
+                        <p class="day-temp">26°C</p>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
+<script src="weather.js"></script>
+
