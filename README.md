@@ -1,4 +1,4 @@
 # ⛅ Weather-App
-A Weather forecast web application developed by me in time span of 2 days. I have added features like find Geo-Location and showing the current weather at loacation,weather forecat, sunrise and sunset timings,all weather condtions and google map etc.
+A Weather forecast web application was developed in 2 days. I have added features like finding Geo-Location and showing the current weather at the location, weather forecasts, sunrise and sunset timings, all weather conditions google map etc.
 
 ## Live : https://vishals-masai-weather-site.netlify.app/
